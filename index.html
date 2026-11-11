@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5fbf6" media="(prefers-color-scheme: light)">
+<title>Velo-Verschleiss</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=block">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<header>
+  <h1>AMFLOW PL Carbon</h1>
+  <p id="subtitle"></p>
+</header>
+
+<section id="viewport" aria-label="3D-Modell"></section>
+<p id="next" class="next"></p>
+
+<main>
+  <section id="tab-parts"></section>
+  <section id="tab-rides" hidden></section>
+  <section id="tab-care" hidden></section>
+  <section id="tab-costs" hidden></section>
+  <section id="tab-settings" hidden></section>
+</main>
+
+<button id="syncBtn">Fahrten laden</button>
+<input id="avinoxFile" type="file" multiple hidden>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" data-tab="parts" data-icon="pedal_bike" aria-selected="true">Teile</button>
+  <button role="tab" data-tab="rides" data-icon="route" aria-selected="false">Fahrten</button>
+  <button role="tab" data-tab="care" data-icon="checklist" aria-selected="false">Pflege</button>
+  <button role="tab" data-tab="costs" data-icon="payments" aria-selected="false">Kosten</button>
+  <button role="tab" data-tab="settings" data-icon="settings" aria-selected="false">Mehr</button>
+</nav>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-card" role="dialog" aria-modal="true"></div>
+</div>
+<div id="toast" class="toast" hidden></div>
+<div id="printout"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
